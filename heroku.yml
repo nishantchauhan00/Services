@@ -3,8 +3,5 @@ build:
         redis: ./redis/Dockerfile.heroku
 run:
     redis: redis-server /usr/local/etc/redis.conf
-    config:
-        REDIS_PASSWORD: pass@123
-
     
 
