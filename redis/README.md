@@ -4,7 +4,7 @@
 > docker exec -it container_id /bin/sh
 
 # Other commands
->redis-benchmark -n 1000000 incr foo
->redis-cli object freq foo
+> redis-benchmark -n 1000000 incr foo
+> redis-cli object freq foo
 
 
