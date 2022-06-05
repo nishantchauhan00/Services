@@ -1,0 +1,6 @@
+## COMMANDS
+```
+rabbitmq-diagnostics
+
+
+```
