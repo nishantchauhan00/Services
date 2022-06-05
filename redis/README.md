@@ -9,3 +9,8 @@
 > redis-cli object freq foo
 ```
 
+## PORTS
+```
+1. redis : 5050
+2. rabbitmq : 5051
+```

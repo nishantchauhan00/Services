@@ -4,4 +4,4 @@ ADD ./redis.conf /usr/local/etc/redis/redis.conf
 
 HEALTHCHECK --interval=60s --retries=3 --timeout=5s  CMD redis-cli ping
 
-CMD redis-server /usr/local/etc/redis/redis.conf --requirepass ${REDIS_PASSWORD}
+CMD redis-server /usr/local/etc/redis/redis.conf --port ${REDIS_PORT} --requirepass ${REDIS_PASSWORD}

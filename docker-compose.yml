@@ -8,10 +8,24 @@ services:
             context: ./redis
         restart: always
         ports:
-            - '6379:5050'
+            - "${REDIS_PORT}:5050"
         volumes:
             - ./redis/redis.conf:/usr/local/etc/redis.conf
-            - ./redis/data:/data
-        image: redis-7/quark
+            - ../docker-volumes/redis/data:/data
+        image: redis-7:quark
         env_file: ./redis/.env
-        
+    rabbitmq:
+        container_name: rabbitmq_container
+        build:
+            dockerfile: Dockerfile
+            context: ./rabbitMQ
+        restart: always
+        image: rabbitmq-3.10.5:quark
+        env_file: ./rabbitMQ/.env
+        ports:
+            - "${RABBIT_MQ_PORT}:5051"
+        volumes:
+            - ./rabbitMQ/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+            - ../docker-volumes/rabbitmq/log:/var/log/rabbitmq
+            - ../docker-volumes/rabbitmq/mnesia:/var/lib/rabbitmq/mnesia
+            
